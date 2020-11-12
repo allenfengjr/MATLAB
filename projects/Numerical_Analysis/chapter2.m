@@ -43,3 +43,4 @@ while i<100
 end
 % 第三题:牛顿法解方程
 y2 = @(x) 0.5 + x + x^2/4 - x*sin(x) -cos(2*x)/2;
+dy2 = @(x) 1+x/2 -sin(x) -x*cos(x) + sin(2*x);
