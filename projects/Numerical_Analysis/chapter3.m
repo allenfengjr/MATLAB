@@ -12,3 +12,4 @@ for i=1:n
     a(1,i) = fy(x(1,i));
 end
 free = free_spline(10,x1,a);
+guzhi = guzhi_spline(10,x1,a,dy(0),dy(pi));

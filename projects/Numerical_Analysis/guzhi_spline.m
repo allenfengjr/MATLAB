@@ -1,6 +1,10 @@
 %修改n为区间数,下标都+1即可
 function abcd =guzhi_spline(n,x,a,FPO,FPN)
 abcd = zeros(4,n+1);
+b = zeros(1,n+1);
+c = zeros(1,n+1);
+d = zeros(1,n+1);
+
 h = zeros(1,n);
 alpha = zeros(1,n+1);
 for i=1:n
@@ -20,9 +24,9 @@ for i=2:n
     u(1,i) = h(1,i) /l(1,i);
     z(1,i) = (alpha(1,i)- h(1,i-1)*z(1,i-1)) / l(1,i);
 end
-b = zeros(1,n+1);
-c = zeros(1,n+1);
-d = zeros(1,n+1);
+l(1,n+1)=h(1,n)*(2-u(1,n));
+z(1,n+1)=(alpha(1,n+1)-h(1,n)*z(1,n))/l(1,n+1);
+c(1,n+1)=z(1,n+1);
 
 for j=n:-1:1
     c(1,j) = z(1,j)-u(1,j)*c(1,j+1);
