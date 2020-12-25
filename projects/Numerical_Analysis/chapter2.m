@@ -2,7 +2,7 @@
 % 第一题:三种方式求根：不动点，牛顿切线法，牛顿割线法
 % 不动点法
 x0 = 2;
-N0 = 20; %最多一百次迭代
+N0 = 20; %最多迭代次数
 x_fix = zeros(N0,1);x_fix(1,1)=x0;
 x_newton = zeros(N0,1);x_newton(1,1)=x0;
 x_secant = zeros(N0,1);x_secant(1,1)=x0;
