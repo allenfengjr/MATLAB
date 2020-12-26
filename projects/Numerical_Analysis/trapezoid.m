@@ -1,7 +1,7 @@
-function integral =trapezoid(fa,fb,Fx,h)
-integral = fa+fb;
+function integral =trapezoid(Fx,h)
 n = length(Fx);
-for i =1:n
+integral = Fx(1)+Fx(n);
+for i =2:n-1
     integral = integral + 2*Fx(1,i);
 end
 integral = integral * (h/2);

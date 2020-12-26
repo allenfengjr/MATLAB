@@ -1,0 +1,14 @@
+function integral =simpson(fa,fb,Fx,h)
+integral = 0;
+XI0 = fa+fb;
+XI1 = 0;
+XI2 = 0;
+n = length(Fx);
+for i =1:n
+    if mod(i,2)==0
+        
+    else
+        
+    end
+end
+integral = integral * (h/2);
