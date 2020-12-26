@@ -27,14 +27,14 @@ end
 Runge_Kutta_ans = Runge_Kutta(t,f1,Runge_Kutta_ans,h);
 %第二题
 us = [0.01,0.1,1];
-a=0;b=60;
+a=0;b=1;
 N=100;h=(b-a)/N;
 t=linspace(a,b,N+1);
 van_der_Pol = zeros(2,N+1);
 %y1 = y' y2 = y
 van_der_Pol(1,1) = 0;
 van_der_Pol(2,1) = 1;
-for i=1:1
+for i=3:3
     u = us(1,i);
     fs1 = @(t,y1,y2)(u*(1-y2^2)*y1-y2);
     fs2 = @(t,y1,y2)(y1);
