@@ -1,10 +1,10 @@
+%第一题
 %y' = 1 + y2, y(0) = 0 
 f1 = @(t,y)(1 + y^2);
 fy1 = @(x)(tan(x));
 a = 0;b = 1;
 N = 50;
 h = (b-a)/N;
-% eular
 t = linspace(a,b,N+1);
 Euler_Explicit = zeros(1,N);
 Euler_Explicit(1,1) = 0;
@@ -25,7 +25,9 @@ for i=2:N+1
 end
 %龙格库塔四阶
 Runge_Kutta_ans = Runge_Kutta(t,f1,Runge_Kutta_ans,h);
+%第二题
 
+%第三题
 %Adam四阶预测校正算法
 f2 = @(t,y)((t-y)/2);
 fy2 = @(t)((t+3*exp(-t/2)-2));
