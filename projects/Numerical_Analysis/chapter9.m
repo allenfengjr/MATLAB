@@ -9,3 +9,8 @@ A = [4 ,-1 ,1;
 [u2,x2] = symmetric_power_method(A,1e-5,100,VEC_INIT);
 [u3,x3] = inv_power_method(A,1e-5,100,VEC_INIT);
 %第二题求QR分解
+A = [1, 0, 0;
+1, 1, 0;
+1, 1, 1;
+1, 1, 1];
+[Q,R] = Householder(A);
