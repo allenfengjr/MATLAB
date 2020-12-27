@@ -2,7 +2,7 @@
 % 第一题:三种方式求根：不动点，牛顿切线法，牛顿割线法
 % 不动点法
 x0 = 2;
-N0 = 20; %最多迭代次数
+N0 = 54; %最多迭代次数
 x_fix = zeros(N0,1);x_fix(1,1)=x0;
 x_newton = zeros(N0,1);x_newton(1,1)=x0;
 x_secant = zeros(N0,1);x_secant(1,1)=x0;
@@ -24,23 +24,8 @@ end
 % 第二题:二分法解方程
 y1 = @(x) 2 - 3*x - sin(x);
 left = 0; right = 1;
-y_left = y1(left);
-y_right = y1(right);
-i = 1;
-while i<N0
-    middle = (left + right)/2;
-    y_middle = y1(middle);        
-    % 误差不大于0.0005
-    if middle-left < 0.0005
-        disp(i);
-        break
-    elseif y_middle*y1(left)>0
-        left = middle;
-    else
-        right = middle;
-    end
-    i = i + 1;
-end
+err=0.0005;
+ans2 = binary(left,right,y1,err);
 % 第三题:牛顿法解方程
 y2 = @(x) 0.5 + x + x^2/4 - x*sin(x) -cos(2*x)/2;
 dy2 = @(x) 1+x/2 -sin(x) -x*cos(x) + sin(2*x);
@@ -53,3 +38,6 @@ while i<N0
     end
     i = i + 1;
 end
+% 第四题：错位法
+y3 = @(x)(5*x-exp(x));
+dy3 = @(x)(5-exp(x));

@@ -13,4 +13,5 @@ A = [1, 0, 0;
 1, 1, 0;
 1, 1, 1;
 1, 1, 1];
-[Q,R] = Householder(A);
+[Q1,R1] = Householder(A);
+[Q2,R2] = Given_Rotation(A);
