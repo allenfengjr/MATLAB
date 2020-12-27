@@ -31,19 +31,19 @@ binary_ans2 = binary(left,right,y1,err);
 y2 = @(x)(0.5+ x.^2/4 - x.*sin(x) -cos(2.*x)/2);
 dy2 = @(x)(x/2 -sin(x) -x*cos(x) + sin(2*x));
 
-test = linspace(-1*pi,3*pi,100);
+test = linspace(-10*pi,30*pi,100);
 test_y = y2(test);
 plot(test,test_y);
 x0 =[pi/2 5*pi 10*pi];
 x_newton_init =  [x0 ;zeros(N0-1,3)];
 i=1;
-k = [N0,N0,N0];
+k = zeros(1,3);
 while i<N0
     for j=1:3
         x_newton_init(i+1,j) = x_newton_init(i,j) -...
                y2(x_newton_init(i,j))/dy2(x_newton_init(i,j)); 
         if abs(x_newton_init(i+1,j)-x_newton_init(i,j))<1e-5
-            k(1,j) = min(k(1,j),i);
+            k(1,j) = 
         end
     end
     i = i + 1;
