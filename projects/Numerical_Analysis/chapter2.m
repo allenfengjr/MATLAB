@@ -25,7 +25,7 @@ end
 y1 = @(x) 2 - 3*x - sin(x);
 left = 0; right = 1;
 err=0.0005;
-binary_ans2 = binary(left,right,y1,err);
+[binary_ans2,k_2] = binary(left,right,y1,err);
 
 % 第三题:牛顿法解方程
 y2 = @(x)(0.5+ x.^2/4 - x.*sin(x) -cos(2.*x)/2);
@@ -51,3 +51,10 @@ end
 % 第四题：错位法
 y3 = @(x)(5*x-exp(x));
 dy3 = @(x)(5-exp(x));
+p0=0;
+p1=1;
+err=1e-4;
+[x4_binary,k4_binary]=binary(p0,p1,y3,err);
+[x4_newton,k4_newton]=Newton(p0,y3,dy3,err);
+[x4_secant,k4_secant]=Secant(p0,p1,y3,err);
+[x4_regula,k4_regula]=Regula(p0,p1,y3,err);
