@@ -7,6 +7,7 @@ for i=1:n
     for j=i+1:m 
         x=R(:,i);
         rt=givens(x,i,j);%J矩阵
+        disp(rt);
         Q=Q*rt';
         R=rt*R;
     end
