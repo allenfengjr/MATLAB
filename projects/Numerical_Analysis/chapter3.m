@@ -13,3 +13,16 @@ for i=1:n
 end
 free = free_spline(10,x1,a);
 guzhi = guzhi_spline(10,x1,a,dy(0),dy(pi));
+zhouqi = zhouqi_spline(10,x1,a);
+feiniujie = feiniujie_spline(10,x1,a);
+figure
+hold on
+for i=1:n-1
+    x_tmp = linspace(x1(i),x1(i+1),5);
+    disp(x_tmp);
+    y_free = chazhi(free,x1,i,x_tmp);
+    y_guzhi = chazhi(guzhi,x1,i,x_tmp);
+    y_zhouqi = chazhi(zhouqi,x1,i,x_tmp);
+    y_feiniujie = chazhi(feiniujie,x1,i,x_tmp);
+    plot(x_tmp,y_feiniujie)
+end

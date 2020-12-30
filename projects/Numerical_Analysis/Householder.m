@@ -20,7 +20,7 @@ function [Q, R] = qr_step(Q, R, i, m)
     H(i:end, i:end) = house_holder(v);
     % compute new R and Q transpose
     %R实际也可以通过别的办法来做，比如逐列乘Hu =  u − 2v*(v'u)/(v'v)
-
+    disp(H);
     R = H * R;
     Q = Q * H;
 end
